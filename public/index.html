@@ -1,17 +1,75 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <title>Reniec</title>
+
+  <style>
+    .bg-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(79, 79, 79, 0.18), transparent 1px), linear-gradient(to bottom, rgba(79, 79, 79, 0.18), transparent 1px);
+      background-size: 14px 24px;
+      mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+      z-index: -1;
+    }
+
+    .navbar {
+      background-color: rgba(36, 36, 36, 0.7);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-800">
+
+  <div class="bg-blur"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-light sticky top-0 z-50">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white font-bold m-2" href="#">YalBack</a>
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-3" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link class="nav-link text-white mr-5 font-semibold" to="/principal">Inicio</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-white mr-5 font-semibold" to="/reniec">Reniec</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-white mr-5 font-semibold" to="/sunat">Sunat</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link text-white mr-5 font-semibold" to="/placa">Placa</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>
